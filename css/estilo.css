@@ -1,0 +1,109 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f5f9;
+    color: #222;
+    line-height: 1.5;
+}
+
+.cabecera { background: #1f3a5f; color: #fff; padding: 12px 20px; }
+.cabecera h1 { margin: 0 0 8px; font-size: 1.5rem; }
+
+.menu { display: flex; flex-wrap: wrap; gap: 6px; }
+.menu a {
+    color: #fff; text-decoration: none; padding: 6px 12px;
+    border-radius: 6px; background: rgba(255,255,255,.12); font-size: .9rem;
+}
+.menu a:hover, .menu a.activo { background: #f0a500; color: #1f3a5f; }
+
+.contenido { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.pie { text-align: center; padding: 16px; color: #666; font-size: .85rem; }
+
+h2 { color: #1f3a5f; margin-top: 0; }
+
+.tarjeta {
+    background: #fff; border-radius: 10px; padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08); margin-bottom: 20px;
+}
+
+/* Página principal */
+.rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.rejilla a {
+    display: block; background: #fff; border-radius: 10px; padding: 18px;
+    text-decoration: none; color: #1f3a5f; border-left: 6px solid #f0a500;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+.rejilla a:hover { background: #fff7e0; }
+.rejilla strong { display: block; margin-bottom: 4px; }
+.rejilla span { color: #555; font-size: .9rem; }
+
+/* Formularios */
+form label { display: block; margin: 10px 0 4px; font-weight: bold; }
+input[type=text], input[type=number], select, textarea {
+    width: 100%; padding: 8px; border: 1px solid #b8c0cc; border-radius: 6px; font-size: 1rem;
+}
+.fila { display: flex; flex-wrap: wrap; gap: 12px; }
+.fila > div { flex: 1 1 160px; }
+.opciones label { display: inline-block; font-weight: normal; margin-right: 16px; }
+
+button, .boton {
+    margin-top: 14px; padding: 9px 18px; border: 0; border-radius: 6px;
+    background: #1f3a5f; color: #fff; font-size: 1rem; cursor: pointer;
+    text-decoration: none; display: inline-block;
+}
+button:hover, .boton:hover { background: #2f5a94; }
+button.peligro { background: #b3261e; }
+button.peligro:hover { background: #8c1d18; }
+
+/* Mensajes y resultados */
+.error { background: #fdecea; color: #8c1d18; border-left: 5px solid #b3261e; padding: 10px 14px; border-radius: 6px; }
+.aviso { background: #fff7e0; color: #6b4e00; border-left: 5px solid #f0a500; padding: 10px 14px; border-radius: 6px; }
+.resultado { background: #eaf6ec; border-left: 5px solid #2e7d32; padding: 12px 16px; border-radius: 6px; margin-top: 16px; }
+.resultado p { margin: 6px 0; }
+.grande { font-size: 1.6rem; font-weight: bold; word-break: break-all; }
+
+table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+th, td { border: 1px solid #ccd3dc; padding: 6px 10px; text-align: left; }
+th { background: #e8edf4; }
+
+ol.historial { padding-left: 20px; }
+ol.historial li { padding: 4px 0; border-bottom: 1px dashed #ccd3dc; }
+
+/* Árbol binario (solo CSS) */
+.arbol { overflow-x: auto; padding: 10px 0; }
+.arbol ul {
+    position: relative; display: flex; justify-content: center;
+    margin: 0; padding: 20px 0 0 0;
+}
+.arbol > ul { padding-top: 0; }
+.arbol li {
+    list-style: none; text-align: center; position: relative; padding: 20px 8px 0 8px;
+}
+.arbol > ul > li { padding-top: 0; }
+.arbol li::before, .arbol li::after {
+    content: ''; position: absolute; top: 0; right: 50%;
+    width: 50%; height: 20px; border-top: 2px solid #1f3a5f;
+}
+.arbol li::after { right: auto; left: 50%; border-left: 2px solid #1f3a5f; }
+.arbol > ul > li::before, .arbol > ul > li::after { display: none; }
+.arbol li:only-child::before, .arbol li:only-child::after { display: none; }
+.arbol li:only-child { padding-top: 0; }
+.arbol li:first-child::before, .arbol li:last-child::after { border: 0 none; }
+.arbol li:last-child::before { border-right: 2px solid #1f3a5f; border-radius: 0 6px 0 0; }
+.arbol li:first-child::after { border-radius: 6px 0 0 0; }
+.arbol ul ul::before {
+    content: ''; position: absolute; top: 0; left: 50%;
+    height: 20px; border-left: 2px solid #1f3a5f;
+}
+.arbol li span {
+    display: inline-block; min-width: 38px; padding: 6px 10px;
+    background: #f0a500; color: #1f3a5f; font-weight: bold;
+    border-radius: 50%; border: 2px solid #1f3a5f;
+}
+/* Hijo vacío: mantiene la posición izquierda/derecha pero no se dibuja */
+.arbol li.vacio span { visibility: hidden; }
+.arbol li.vacio::before, .arbol li.vacio::after {
+    border-left-color: transparent; border-right-color: transparent;
+}
