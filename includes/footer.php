@@ -1,4 +1,9 @@
 <?php
+$estaciones = $estaciones ?? array();
+$estacionActual = $estacionActual ?? null;
+$posicionEstacion = $posicionEstacion ?? 0;
+$base = $base ?? '';
+
 $estacionAnterior = null;
 $estacionSiguiente = null;
 
@@ -29,7 +34,7 @@ if ($estacionActual !== null) {
 <?php endif; ?>
 </main>
 <footer class="pie">
-    <p>Laboratorio PHP &middot; HTML, CSS, PHP y POO</p>
+    <p>Taller PHP &middot; HTML, CSS, PHP y POO</p>
 </footer>
 </body>
 </html>
