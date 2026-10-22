@@ -1,29 +1,35 @@
 <?php
-$base   = '';
+$base = '';
 $titulo = 'Inicio';
 require_once __DIR__ . '/includes/header.php';
-
-$descripciones = [
-    '1_acronimo.php'    => 'Convierte una frase en su acrónimo.',
-    '2_secuencias.php'  => 'Genera la serie de Fibonacci o de factoriales.',
-    '3_estadistica.php' => 'Promedio, mediana y moda de una serie de números.',
-    '4_conjuntos.php'   => 'Unión, intersección y diferencias de dos conjuntos.',
-    '5_binario.php'     => 'Convierte un número entero a binario.',
-    '6_arbol.php'       => 'Construye un árbol binario desde sus recorridos.',
-    '7_calculadora.php' => 'Calculadora con historial de operaciones.',
-];
+$indice = 0;
 ?>
-<div class="tarjeta">
-    <h2>Bienvenido</h2>
-    <p>Elige una de las aplicaciones del taller en el menú de arriba o en las tarjetas de abajo.</p>
-</div>
-
-<div class="rejilla">
-    <?php foreach (menuAplicaciones() as $archivo => $nombre): ?>
-        <a href="apps/<?= $archivo ?>">
-            <strong><?= e($nombre) ?></strong>
-            <span><?= e($descripciones[$archivo]) ?></span>
+<section class="bienvenida-aero">
+    <p class="sobrelinea">Dylan Antonio Rueda Rocha</p>
+    <h2> Taller php</h2>
+    <p>Elige una burbuja y explora uno de las 7 aplicaciones.</p>
+</section>
+<section class="orbita-menu" aria-label="Estaciones del laboratorio">
+    <span class="luna luna-1"></span>
+    <span class="luna luna-2"></span>
+    <span class="luna luna-3"></span>
+    <span class="planeta-deco planeta-a"></span>
+    <span class="planeta-deco planeta-b"></span>
+    <span class="destello destello-1">✦</span>
+    <span class="destello destello-2">✧</span>
+    <span class="destello destello-3">✦</span>
+    <span class="destello destello-4">✧</span>
+    <div class="burbuja-central">
+        <span class="brillo-central">✧</span>
+        <strong>PHP</strong>
+    </div>
+    <?php foreach ($estaciones as $archivo => $datos): $indice++; ?>
+        <a class="burbuja-opcion opcion-<?= $indice ?>" href="operaciones/<?= e($archivo) ?>">
+            <span class="burbuja-icono"><?= e($datos['icono']) ?></span>
+            <strong><?= e($datos['nombre']) ?></strong>
+            <small><?= e($datos['resumen']) ?></small>
         </a>
     <?php endforeach; ?>
-</div>
+</section>
+<p class="nota-orbita">Siete aplicaciones · en un solo lugar</p>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
