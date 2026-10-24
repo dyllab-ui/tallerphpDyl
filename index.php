@@ -7,7 +7,7 @@ $indice = 0;
 <section class="bienvenida-aero">
     <p class="sobrelinea">Dylan Antonio Rueda Rocha</p>
     <h2> Taller php</h2>
-    <p>Elige una burbuja y explora uno de las 7 aplicaciones.</p>
+    <p>Elige una burbuja y explora una de las 7 aplicaciones.</p>
 </section>
 <section class="orbita-menu" aria-label="Estaciones del laboratorio">
     <span class="luna luna-1"></span>
